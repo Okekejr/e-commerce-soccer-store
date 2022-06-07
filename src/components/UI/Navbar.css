@@ -1,0 +1,119 @@
+/* Navbar */
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    margin: 50px auto 30px;
+}
+
+.logoImage {
+    margin-left: 20px;
+    width: 13rem;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style-type: none;
+    align-content: center;
+    margin-right: 20px;
+}
+
+#root > div > div:nth-child(1) > nav > ul {
+    margin-bottom: 0px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+ul .page {
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+li a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.Home,
+.Shop {
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.mobile-menu-icon {
+    display: none;
+}
+
+@media screen and (max-width: 769px) {
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 0;
+    }
+
+    .logo {
+        display: flex;
+        position: relative;
+        top: 15px;
+        left: 35px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+    
+    .nav-links-mobile {
+        position: absolute;
+        display: block;
+        list-style-type: none;
+        background-color: #140025;
+        left: 0;
+        top: 75px;
+        transition: all 0.5s ease-out;
+        width: 100%;
+        z-index: 5;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        list-style-type: none;
+        align-items: center;
+        padding-top: 20px;
+    }
+
+    .Home,
+    .Shop {
+        color: #fff;
+        text-align: center;
+        font-size: 0.9rem;
+        padding: 32px;
+        width: 100%;
+        transition: all 0.5s ease;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+        position: absolute;
+        font-size: 30px;
+        color: #5A10A8;
+        background-color: #140025;
+        border: none;
+        outline: none;
+        top: 15px;
+        right: 25px;
+    }
+
+    #root > div > div:nth-child(1) > nav > ul {
+        margin-top: -20px;
+    }
+}

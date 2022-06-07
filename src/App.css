@@ -1,5 +1,9 @@
 /* styles go here */
 
+body {
+  font-family: "Raleway", sans-serif;
+}
+
 .categories-container {
   width: 100%;
   display: flex;
@@ -30,7 +34,7 @@
 }
 
 .category-body-container {
-  width: 12rem;
+  width: 13rem;
   display: flex;
   justify-content: center;
   margin-top: 50px;
@@ -38,7 +42,6 @@
 }
 
 h2 {
-  font-weight: bold;
   margin: 0 6px 0;
   font-size: 22px;
   color: #fff;
