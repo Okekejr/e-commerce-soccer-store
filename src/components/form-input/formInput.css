@@ -1,0 +1,18 @@
+/* styles go here */
+
+input {
+    border: 1px solid #95a5a6;
+    border-radius: 5px;
+    width: 30rem;
+    padding: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.btn-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.span-text {
+    margin-bottom: 1rem;
+}

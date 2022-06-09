@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Outlet, Link } from "react-router-dom";
+import { UserContext } from "../../contexts/contexts";
+import { signOutUser } from "../../utils/firebase/firebase";
 import "./Navbar.css";
-
 import logoImage from "../../assets/Logo.svg";
 
 export default function Navbar() {
   const [isMobile, setIsMobile] = useState(false);
+  const { currentUser } = useContext(UserContext);
   return (
     <div>
       <nav className="navbar">
@@ -29,11 +31,20 @@ export default function Navbar() {
               Contact
             </Link>
           </li>
-          <li>
-            <Link className="page" to="/sign-in">
-              SIGN IN
-            </Link>
-          </li>
+          {currentUser ? (
+            <li>
+              <span className="page" onClick={signOutUser}>
+                {''}
+                SIGN OUT {''}
+              </span>
+            </li>
+          ) : (
+            <li>
+              <Link className="page" to="/auth">
+                SIGN IN
+              </Link>
+            </li>
+          )}
         </ul>
         <button
           className="mobile-menu-icon"

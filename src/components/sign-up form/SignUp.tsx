@@ -6,6 +6,7 @@ import {
 import { AuthError, AuthErrorCodes } from "firebase/auth";
 
 import FormInput from "../form-input/FormInput";
+import "../form-input/formInput.css";
 
 const defaultFormFields = {
   displayName: "",
@@ -49,6 +50,7 @@ export default function SignUp() {
         email,
         password
       );
+      console.log(response);
 
       await createUserDocumentFromAuth(response?.user!, { displayName });
       resetFormFields();
@@ -64,7 +66,7 @@ export default function SignUp() {
     <div>
       <div className="sign-up-container">
         <h3>Don't have an account?</h3>
-        <span>Sign up with your email and password</span>
+        <p className="span-text">Please fill in the information below:</p>
         <form onSubmit={handleSubmit}>
           <FormInput
             type="text"
@@ -101,7 +103,7 @@ export default function SignUp() {
             value={confirmPassword}
             placeholder="Confirm Password"
           />
-          <button>CREATE ACCOUNT</button>
+          <button className="regularBtn">CREATE ACCOUNT</button>
         </form>
       </div>
     </div>

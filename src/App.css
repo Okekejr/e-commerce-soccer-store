@@ -60,3 +60,32 @@ p {
   background-position: center;
   opacity: 0.9;
 }
+
+/* buttons */
+
+.googleBtn {
+  background-color: #3498db;
+  border-radius: 5px;
+  border: 0px;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 17px 30px;
+}
+
+.regularBtn {
+  background-color: #000;
+  border-radius: 5px;
+  border: 0px;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 17px 30px;
+}
+

@@ -1,5 +1,7 @@
 import React, { InputHTMLAttributes } from "react";
 
+import "./formInput.css";
+
 type Iprops = {
   label?: string;
 } & InputHTMLAttributes<HTMLInputElement>;
@@ -7,7 +9,7 @@ type Iprops = {
 const FormInputSignIn: React.FC<Iprops> = ({ label, ...otherProps }) => {
   return (
     <div>
-      <input {...otherProps} />
+      <input className="input-class" {...otherProps} />
     </div>
   );
 };
