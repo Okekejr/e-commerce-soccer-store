@@ -1,6 +1,9 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { Outlet, Link } from "react-router-dom";
+import CartIcon from "../../components/cart-icon/CartIcon";
+import CartDropDown from "../../components/cart-dropdown/CartDropDown";
 import { UserContext } from "../../contexts/contexts";
+import { CartContext } from "../../contexts/cartContext";
 import { signOutUser } from "../../utils/firebase/firebase";
 import "./Navbar.css";
 import logoImage from "../../assets/Logo.svg";
@@ -8,6 +11,7 @@ import logoImage from "../../assets/Logo.svg";
 export default function Navbar() {
   const [isMobile, setIsMobile] = useState(false);
   const { currentUser } = useContext(UserContext);
+  const { isCartOpen } = useContext(CartContext);
   return (
     <div>
       <nav className="navbar">
@@ -34,8 +38,8 @@ export default function Navbar() {
           {currentUser ? (
             <li>
               <span className="page" onClick={signOutUser}>
-                {''}
-                SIGN OUT {''}
+                {""}
+                SIGN OUT {""}
               </span>
             </li>
           ) : (
@@ -45,7 +49,11 @@ export default function Navbar() {
               </Link>
             </li>
           )}
+          <li>
+            <CartIcon />
+          </li>
         </ul>
+        {isCartOpen && <CartDropDown />}
         <button
           className="mobile-menu-icon"
           onClick={() => setIsMobile(!isMobile)}
