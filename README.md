@@ -1,6 +1,6 @@
 # Ok-soccer-store-by-Okeke
 
-This is an online store, which provides the great UI, login with google, login with email and password, sign out features, storing and retrieving data with firebase. Add items, increase and reduce item number, remove items from cart, checkout page and cart page. it simulates a real e-commerce website and its vast features, and mobile responsive.
+This is an online store, which provides the great UI, login with google, login with email and password, sign out features, storing and retrieving data with firebase. Add items, increase and reduce item number, remove items from cart, checkout page and cart page. it simulates a real e-commerce website its vast features, and mobile responsive.
 
 ## Installation (for standard modern project) and run project
 
