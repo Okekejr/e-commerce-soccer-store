@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 interface Itypes {
   legends: {
@@ -9,10 +10,15 @@ interface Itypes {
 }
 
 const SplashScreen: React.FC<Itypes> = ({ legends }) => {
+  const navigate = useNavigate();
+
+  const shopLink = () => {
+    navigate("/shop");
+  };
   const renderingCategories = (): JSX.Element[] => {
     return legends.map((items, i) => {
       return (
-        <div key={i} className="category-container">
+        <div key={i} className="category-container" onClick={shopLink}>
           <div
             className="background-image"
             style={{ backgroundImage: `url(${items.imageUrl})` }}

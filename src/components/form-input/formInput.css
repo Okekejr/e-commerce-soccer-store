@@ -1,18 +1,27 @@
 /* styles go here */
 
 input {
-    border: 1px solid #95a5a6;
-    border-radius: 5px;
-    width: 30rem;
-    padding: 0.8rem;
-    margin-bottom: 0.8rem;
+  border: 1px solid #95a5a6;
+  border-radius: 5px;
+  width: 30rem;
+  padding: 0.8rem;
+  margin-bottom: 0.8rem;
 }
 
 .btn-flex {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
 }
 
 .span-text {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 769px) {
+  input {
+    width: 17.7rem;
+    padding: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
 }

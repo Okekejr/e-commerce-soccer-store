@@ -1,7 +1,15 @@
 /* styles go here */
 
 .outerContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+@media screen and (max-width: 769px) {
+  .outerContainer {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }

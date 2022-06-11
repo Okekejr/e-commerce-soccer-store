@@ -16,6 +16,10 @@ import {
   doc,
   getDoc,
   setDoc,
+  collection,
+  writeBatch,
+  query,
+  getDocs,
   QueryDocumentSnapshot,
 } from "firebase/firestore";
 
@@ -29,6 +33,19 @@ export type UserData = {
   createdAt: Date;
   displayName: string;
   email: string;
+};
+
+export type CategoryItem = {
+  id: number;
+  imageUrl: string;
+  name: string;
+  price: number;
+};
+
+export type Category = {
+  title: string;
+  imageUrl: string;
+  items?: CategoryItem[];
 };
 
 // Firebase Config
@@ -58,6 +75,40 @@ export const signInWithGoogleRedirect = () =>
   signInWithRedirect(auth, googleProvider);
 
 export const database = getFirestore();
+
+export type ObjectToAdd = {
+  title: string;
+};
+
+export const addCollectionAndDocuments = async <T extends ObjectToAdd>(
+  collectionKey: string,
+  objectsToAdd: T[],
+): Promise<void> => {
+  const batch = writeBatch(database);
+  const collectionRef = collection(database, collectionKey);
+
+  objectsToAdd.forEach((object) => {
+    const docRef = doc(collectionRef, object.title.toLowerCase());
+    batch.set(docRef, object);
+  });
+
+  await batch.commit();
+  console.log("done");
+};
+
+export const getCategoriesAndDocuments = async (): Promise<Category[]> => {
+  const collectionRef = collection(database, "collections");
+  const q = query(collectionRef);
+
+  const querySnapshot = await getDocs(q);
+  const categoryMap = querySnapshot.docs.reduce((acc:any, docSnapshot) => {
+    const { title, items } = docSnapshot.data();
+    acc[title.toLowerCase()] = items;
+    return acc;
+  }, {});
+
+  return categoryMap;
+};
 
 export const createUserDocumentFromAuth = async (
   userAuth: User,

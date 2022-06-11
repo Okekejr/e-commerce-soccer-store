@@ -50,11 +50,11 @@ img:hover {
   font-size: 18px;
 }
 
-.name {
+.name-product {
   width: 90%;
   margin-bottom: 15px;
 }
 
-.price {
+.price-cart {
   width: 10%;
 }

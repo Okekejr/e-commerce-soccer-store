@@ -17,7 +17,7 @@ export default function Directory() {
     },
     {
       id: 3,
-      title: "Goalkeeper",
+      title: "Goalkeepers",
       imageUrl:
         "https://www.lovellsoccer.co.uk/features/splash-pages/soccer/homepage/goalkeepers.jpg?v=6",
     },

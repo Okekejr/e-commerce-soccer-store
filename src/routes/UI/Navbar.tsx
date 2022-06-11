@@ -30,11 +30,6 @@ export default function Navbar() {
               Shop
             </Link>
           </li>
-          <li>
-            <Link className="page" to="/contact">
-              Contact
-            </Link>
-          </li>
           {currentUser ? (
             <li>
               <span className="page" onClick={signOutUser}>
